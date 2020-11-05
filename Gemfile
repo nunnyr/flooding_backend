@@ -19,6 +19,7 @@ gem 'active_model_serializers', '~> 0.10.7'
 gem 'jwt', '~> 2.1'
 gem 'rack-cors'
 gem 'faker'
+gem 'activerecord-reset-pk-sequence'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_10_27_194345) do
 
   create_table "neighborhoods", force: :cascade do |t|
     t.string "neighborhood_name"
+    t.string "image"
     t.text "about"
     t.text "flood_zone"
     t.datetime "created_at", precision: 6, null: false
