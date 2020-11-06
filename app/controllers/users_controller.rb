@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     end
 
     def login 
-       
+    #    byebug
         @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
             token_user = encode_token({user_id: @user.id})
@@ -22,8 +22,6 @@ class UsersController < ApplicationController
         end 
 
     end 
-
-
 
     def create
         @user = User.create(user_params)

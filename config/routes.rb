@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
-  post "/users/login", to: "users#login"
-  post "/users", to: "users#create"
-  get "/users/keep_logged_in", to: "users#keep_logged_in"
+  get "/users", to: "users#index"
+  post "/login", to: "users#login"
+  get "/keep_logged_in", to: "users#keep_logged_in"
 end
