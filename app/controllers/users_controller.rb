@@ -7,39 +7,40 @@ class UsersController < ApplicationController
     end
 
     def login 
-    #    byebug
         @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
             token_user = encode_token({user_id: @user.id})
-
+            
             render json: {
                 user: UserSerializer.new(@user),
                 token: token_user
             }
-
+            
+               byebug
         else  
             render json: {error: "INCORRECT USERNAME OR PASSWORD"}, status: 422
         end 
 
     end 
 
-    def create
-        @user = User.create(user_params)
-        if @user.valid?
-            token_user = encode_token({user_id: @user.id})
+    # def create
+    #     @user = User.create(user_params)
+    #     if @user.valid?
+    #         token_user = encode_token({user_id: @user.id})
 
-            render json: {
-                user: UserSerializer.new(@user),
-                token: token_user
-            }
-        else
-            render json: {error: "INVALID USER"}, status: 422
-        end 
-    end
+    #         render json: {
+    #             user: UserSerializer.new(@user),
+    #             token: token_user
+    #         }
+    #     else
+    #         render json: {error: "INVALID USER"}, status: 422
+    #     end 
+    # end
 
 
     def keep_logged_in
         #@user exists here because of the before action 
+        byebug
         token_user = encode_token({user_id: @user.id})
         
         render json: {

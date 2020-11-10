@@ -23,6 +23,7 @@ class ApplicationController < ActionController::API
         if decoded_token
             user_id = decoded_token[0]['user_id']
             @user = User.find_by(id: user_id)
+            # byebug
         end
     end
 
@@ -31,6 +32,7 @@ class ApplicationController < ActionController::API
     end
 
     def authorized 
-        render json: { error: 'Please log in'}, status: :unathorized unless logged_in?
+        # byebug
+        render json: { error: 'Please log in'}, status: :unauthorized unless logged_in?
     end 
 end

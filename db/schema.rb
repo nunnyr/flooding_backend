@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2020_10_27_194345) do
 
   create_table "favorites", force: :cascade do |t|
     t.string "title"
+    t.string "image"
+    t.text "about"
     t.bigint "user_id", null: false
     t.bigint "neighborhood_id", null: false
     t.datetime "created_at", precision: 6, null: false
