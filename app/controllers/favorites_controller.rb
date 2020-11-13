@@ -4,7 +4,7 @@ before_action :authorized, only: [:create]
 
   def create
     @favorite = @user.favorites.create(favorite_params)
-    byebug
+    # byebug
     render json: @favorite
   end
 

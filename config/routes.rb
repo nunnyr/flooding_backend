@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post "/login", to: "users#login"
   post "/favorites", to: "favorites#create"
   get "/keep_logged_in", to: "users#keep_logged_in"
+  
 end

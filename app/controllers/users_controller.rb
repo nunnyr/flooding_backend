@@ -16,7 +16,7 @@ class UsersController < ApplicationController
                 token: token_user
             }
             
-               byebug
+            #    byebug
         else  
             render json: {error: "INCORRECT USERNAME OR PASSWORD"}, status: 422
         end 
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
     def keep_logged_in
         #@user exists here because of the before action 
-        byebug
+        # byebug
         token_user = encode_token({user_id: @user.id})
         
         render json: {
